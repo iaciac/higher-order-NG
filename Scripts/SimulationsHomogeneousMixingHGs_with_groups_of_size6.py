@@ -162,7 +162,7 @@ class HigherOrderNamingGame():
 
 N = 1000
 
-rule = 'intersection'
+rule = 'union'
 
 betas = np.linspace(0.,0.6,30)
 p = 0
