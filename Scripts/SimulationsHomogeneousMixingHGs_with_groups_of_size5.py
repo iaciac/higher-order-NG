@@ -176,7 +176,7 @@ print_every=500000
 
 n_runs = 50
 
-for run_id in range(12,n_runs):
+for run_id in range(0,12):
     for beta in betas:
         print(run_id, beta)
 
