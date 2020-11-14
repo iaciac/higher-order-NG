@@ -164,23 +164,23 @@ N = 1000
 
 rule = 'union'
 
-betas = np.linspace(0.,0.6,30)
-p = 0
-n_A = 0.45
+betas = np.linspace(0.,1,30)
+p = 0.03
+n_A = 0
 
 t_max = 1e6
-group_size = 6
+group_size = 2
 
 check_every = 1000
 print_every=500000
 
 n_runs = 50
 
-for run_id in range(0,12):
+for run_id in range(n_runs):
     for beta in betas:
         print(run_id, beta)
 
-        output_path = '../Results/Simulations/HONG_2words_HomMix_%iHGs/%s/fixed_p0_varbeta_run%i/'%(group_size-1, rule, run_id)
+        output_path = '../Results/Simulations/HONG_2words_HomMix_%iHGs/%s/fixed_p%.2f_varbeta_run%i/'%(group_size-1, rule, p, run_id)
         if not os.path.exists(output_path):
             os.makedirs(output_path)
 
