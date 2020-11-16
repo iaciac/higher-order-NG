@@ -189,7 +189,7 @@ simplices = json.load(open(filename,'r'))
 rule = 'union'
 
 betas = np.linspace(0.,1.,30)
-p = 0
+p = 0.03
 n_A = 0.45
 
 t_max = 1e5
@@ -202,7 +202,7 @@ for run_id in range(n_runs):
     for beta in betas:
         print(run_id, beta)
 
-        output_path = '../Results/Simulations/HONG_2words_Sociopatterns/%s/%s/fixed_p0_varbeta_run%i/'%(dataset, rule, run_id)
+        output_path = '../Results/Simulations/HONG_2words_Sociopatterns/%s/%s/fixed_p%.2f_varbeta_run%i/'%(dataset, rule, p, run_id)
         if not os.path.exists(output_path):
             os.makedirs(output_path)
 
