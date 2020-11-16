@@ -190,7 +190,7 @@ rule = 'union'
 
 betas = np.linspace(0.,1.,30)
 p = 0.03
-n_A = 0.45
+n_A = 0
 
 t_max = 1e5
 check_every = 100
