@@ -14,7 +14,6 @@ import matplotlib.pyplot as plt
 import os
 import json
 from time import time
-get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 # In[2]:
