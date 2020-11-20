@@ -166,7 +166,7 @@ class HigherOrderNamingGame():
 
 
 #Reading
-filename = '../Data/email-Eu/Processed_data/congress-bills_simplices.json'
+filename = '../Data/email-Eu/Processed_data/email-Eu_simplices.json'
 simplices = json.load(open(filename,'r'))
 
 
