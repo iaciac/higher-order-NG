@@ -175,7 +175,7 @@ class HigherOrderNamingGame():
 dataset_dir = '../Data/Sociopatterns/Processed_data/'
 n_minutes = 15
 
-dataset = 'InVS15' # ['InVS13','InVS15','LH10','LyonSchool','SFHH','Thiers13']
+dataset = 'Thiers13' # ['InVS13','InVS15','LH10','LyonSchool','SFHH','Thiers13']
 thr = 1 #[1,3,5]
 
 #Reading

@@ -175,7 +175,7 @@ class HigherOrderNamingGame():
 dataset_dir = '../Data/Sociopatterns/Processed_data/'
 n_minutes = 15
 
-dataset = 'InVS15' # ['InVS13','InVS15','LH10','LyonSchool','SFHH','Thiers13']
+dataset = 'LyonSchool' # ['InVS13','InVS15','LH10','LyonSchool','SFHH','Thiers13']
 thr = 1 #[1,3,5]
 
 #Reading
@@ -186,7 +186,7 @@ simplices = json.load(open(filename,'r'))
 # In[ ]:
 
 
-rule = 'union'
+rule = 'intersection'
 
 betas = np.linspace(0.,0.8,35)
 p = 0

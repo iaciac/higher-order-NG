@@ -186,7 +186,7 @@ simplices = json.load(open(filename,'r'))
 # In[ ]:
 
 
-rule = 'union'
+rule = 'intersection'
 
 betas = np.linspace(0.,0.8,35)
 p = 0
