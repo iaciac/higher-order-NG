@@ -182,7 +182,7 @@ t_max = 1e5
 check_every = 100
 print_every=50000
 
-n_runs = 50
+n_runs = 250
 
 for run_id in range(n_runs):
     for beta in betas:
