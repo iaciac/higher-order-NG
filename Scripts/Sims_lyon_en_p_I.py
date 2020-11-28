@@ -234,7 +234,7 @@ simplices = json.load(open(filename,'r'))
 
 rule = 'intersection'
 
-betas = np.linspace(0.,0.8,35)
+betas = np.linspace(0.,1,30)
 
 p = 0.03
 n_A = 0
