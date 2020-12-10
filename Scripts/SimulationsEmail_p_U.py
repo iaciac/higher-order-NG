@@ -178,11 +178,11 @@ betas = np.linspace(0.,1,30)
 p = 0.03
 n_A = 0
 
-t_max = 1e5
+t_max = 2e5
 check_every = 100
 print_every=50000
 
-n_runs = 250
+n_runs = 50
 
 for run_id in range(n_runs):
     for beta in betas:

@@ -174,11 +174,11 @@ simplices = json.load(open(filename,'r'))
 
 rule = 'union'
 
-betas = np.linspace(0.,0.8,35)
+betas = np.linspace(0.,0.6,30)
 p = 0
 n_A = 0.45
 
-t_max = 1e5
+t_max = 2e5
 check_every = 100
 print_every=50000
 
