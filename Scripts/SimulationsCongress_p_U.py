@@ -127,6 +127,12 @@ class HigherOrderNamingGame():
         densities_path = path + 'HONG_densities_beta%.4f_p%.2f.csv'%(self.beta, self.p)
         f = open(densities_path,'w')
         f.write('time,n_A+p,n_B,n_AB\n')
+
+        #Saving values at t=0
+        n_Ap, n_B, n_AB = self.get_densities()
+        line = "%i,%.3f,%.3f,%.3f\n"%(self.t, n_Ap, n_B, n_AB)
+        f.write(line)
+
         
         while self.t <= self.t_max:
             self.t += 1
@@ -178,8 +184,8 @@ betas = np.linspace(0.,1,30)
 p = 0.03
 n_A = 0
 
-t_max = 4e5
-check_every = 200
+t_max = 1e6
+check_every = 500
 print_every=50000
 
 n_runs = 50
