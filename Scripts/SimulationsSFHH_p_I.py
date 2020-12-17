@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[44]:
 
 
 import numpy as np
@@ -16,7 +16,7 @@ import json
 from time import time
 
 
-# In[2]:
+# In[45]:
 
 
 #Model constructor
@@ -164,15 +164,29 @@ class HigherOrderNamingGame():
 # In[9]:
 
 
+#datasetlist = ['InVS13','InVS15','LH10','LyonSchool','SFHH','Thiers13']
+
+
+# Reading
+
+# In[48]:
+
+
+dataset_dir = '../Data/Sociopatterns/Processed_data/'
+n_minutes = 15
+
+dataset = 'SFHH' # ['InVS13','InVS15','LH10','LyonSchool','SFHH','Thiers13']
+thr = 1 #[1,3,5]
+
 #Reading
-filename = '../Data/congress-bills/Processed_data/congress-bills_simplices.json'
+filename = dataset_dir+'aggr_'+str(n_minutes)+'min_cliques_thr'+str(thr)+'_'+dataset+'.json'
 simplices = json.load(open(filename,'r'))
 
 
-# In[10]:
+# In[ ]:
 
 
-rule = 'union'
+rule = 'intersection'
 
 betas = np.linspace(0.,1,30)
 p = 0.03
@@ -188,29 +202,10 @@ for run_id in range(n_runs):
     for beta in betas:
         print(run_id, beta)
 
-        output_path = '../Results/Simulations/HONG_2words_congress-bills/%s/fixed_p%.2f_varbeta_run%i/'%(rule, p, run_id)
+        output_path = '../Results/Simulations/HONG_2words_Sociopatterns/%s/%s/fixed_p%.2f_varbeta_run%i/'%(dataset, rule, p, run_id)
         if not os.path.exists(output_path):
             os.makedirs(output_path)
 
         HONG = HigherOrderNamingGame(simplices, rule)
         HONG.SetInitialConditions(beta=beta, p=p, n_A=n_A, verbose=True)
         HONG.run(output_path, t_max, check_every, print_every)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-

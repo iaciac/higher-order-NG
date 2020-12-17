@@ -178,8 +178,8 @@ betas = np.linspace(0.,0.6,30)
 p = 0
 n_A = 0.45
 
-t_max = 1e5
-check_every = 100
+t_max = 4e5
+check_every = 200
 print_every=50000
 
 n_runs = 50
