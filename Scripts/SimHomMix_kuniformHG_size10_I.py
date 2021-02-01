@@ -1,31 +1,32 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[59]:
+# In[1]:
 
 
 import numpy as np
-from scipy import random, stats
+from scipy import random
 import networkx as nx
 import pandas as pd
 import random
 import collections
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
+#from matplotlib.lines import Line2D
+#import matplotlib.patches as mpatches
 import os
-import json
-from time import time
-from collections import Counter
+#get_ipython().run_line_magic('matplotlib', 'inline')
+
+
+# In[2]:
 
 
 #Model constructor
 class HigherOrderNamingGame():
     
-    def __init__(self, N, sizes, weights, rule):
+    def __init__(self, N, rule):
         
         #Structure
         self.N = N
-        self.simp_sizes = sizes
-        self.simp_weights = weights
         self.nodes = range(self.N)
         
         #Time
@@ -118,7 +119,7 @@ class HigherOrderNamingGame():
         n_AB = 1-n_Ap-n_B
         return n_Ap, n_B, n_AB
 
-    def run(self, path, t_max=100, check_every=10, print_every=1):
+    def run(self, path, t_max=100, group_size=3, check_every=10, print_every=1):
         
         self.t_max = t_max
         
@@ -130,10 +131,8 @@ class HigherOrderNamingGame():
         while self.t <= self.t_max:
             self.t += 1
             if self.t%print_every==0: print('t=%i'%self.t)
-                      
-            #Drawing a group_size from the distribution of group sizes     
-            group_size = np.random.choice(self.simp_sizes, p=self.simp_weights)         
-            #Playing on a random simplex of size group_size obtained from the list of nodes
+                            
+            #Playing on a random simplex obtained as a triplet from the list of nodes
             simplex = random.sample(self.nodes, group_size)
             self.play_on_simplex(simplex)
                 
@@ -151,34 +150,29 @@ class HigherOrderNamingGame():
                 
         f.close()    
         print('DONE! Run out of time...')
-        
-def get_size_dists_from_beta_dist(a=0.5, b=0.5):
-    x = np.linspace(0.01,0.99,5)
-    y = stats.beta.pdf(x, a, b)
-    weights = y/sum(y)
-    sizes = [2,3,4,5,6]
-    return sizes, weights
 
 
-# I will sample group sizes from a uniform distribution from 2 to 6 
 
-sizes = [2,3,4,5,6,7,8,9,10]
-weights = [1]*len(sizes)
-weights = [w/sum(weights) for w in weights]
+# ## Fixed p=0
 
-# ## Simulating
+# Running n_runs simulations and saving everything in different files without any aggregation
+
+# In[ ]:
+
+
+N = 1000
 
 rule = 'intersection'
 
-betas = np.linspace(0.,1.,30)
+betas = np.linspace(0.,1,30)
 p = 0.03
 n_A = 0
 
 t_max = 1e6
-check_every = 500
-print_every=50000
+group_size = 10
 
-N = 1000
+check_every = 500
+print_every=500000
 
 n_runs = 50
 
@@ -186,10 +180,14 @@ for run_id in range(n_runs):
     for beta in betas:
         print(run_id, beta)
 
-        output_path = '../Results/Simulations/HONG_2words_HomMix_synth_uniform/%s/fixed_p%.2f_varbeta_run%i/'%(rule, p, run_id)
+        output_path = '../Results/Simulations/HONG_2words_HomMix_%iHGs/%s/fixed_p0_varbeta_run%i/'%(group_size-1, rule, run_id)
         if not os.path.exists(output_path):
             os.makedirs(output_path)
 
-        HONG = HigherOrderNamingGame(N, sizes, weights, rule)
+        HONG = HigherOrderNamingGame(N, rule)
         HONG.SetInitialConditions(beta=beta, p=p, n_A=n_A, verbose=True)
-        HONG.run(output_path, t_max, check_every, print_every)
+        HONG.run(output_path, t_max, group_size, check_every, print_every)
+
+
+
+
