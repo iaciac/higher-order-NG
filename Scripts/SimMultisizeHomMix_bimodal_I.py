@@ -153,7 +153,7 @@ class HigherOrderNamingGame():
         print('DONE! Run out of time...')
         
 def get_size_dists_from_beta_dist(a=0.5, b=0.5):
-	sizes = [2,3,4,5,6,7,8,9,10]
+    sizes = [2,3,4,5,6,7,8,9,10]
     x = np.linspace(0.01,0.99,len(sizes))
     y = stats.beta.pdf(x, a, b)
     weights = y/sum(y)
