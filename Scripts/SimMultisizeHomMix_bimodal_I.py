@@ -153,11 +153,11 @@ class HigherOrderNamingGame():
         print('DONE! Run out of time...')
         
 def get_size_dists_from_beta_dist(a=0.5, b=0.5):
-    sizes = [2,3,4,5,6,7,8,9,10]
-    x = np.linspace(0.01,0.99,len(sizes))
-    y = stats.beta.pdf(x, a, b)
-    weights = y/sum(y)
-    return sizes, weights
+	sizes = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+	x = np.linspace(0.01,0.99,len(sizes))
+	y = stats.beta.pdf(x, a, b)
+	weights = y/sum(y)
+	return sizes, weights
 
 
 # I will sample group sizes from this beta (u-shaped) distribution from 2 to 6 

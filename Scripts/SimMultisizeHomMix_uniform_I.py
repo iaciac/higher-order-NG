@@ -162,7 +162,7 @@ def get_size_dists_from_beta_dist(a=0.5, b=0.5):
 
 # I will sample group sizes from a uniform distribution from 2 to 6 
 
-sizes = [2,3,4,5,6,7,8,9,10]
+sizes = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 weights = [1]*len(sizes)
 weights = [w/sum(weights) for w in weights]
 

@@ -180,7 +180,7 @@ for run_id in range(n_runs):
     for beta in betas:
         print(run_id, beta)
 
-        output_path = '../Results/Simulations/HONG_2words_HomMix_%iHGs/%s/fixed_p0_varbeta_run%i/'%(group_size-1, rule, run_id)
+        output_path = '../Results/Simulations/HONG_2words_HomMix_%iHGs/%s/fixed_p%.2f_varbeta_run%i/'%(group_size-1, rule, p, run_id)
         if not os.path.exists(output_path):
             os.makedirs(output_path)
 
