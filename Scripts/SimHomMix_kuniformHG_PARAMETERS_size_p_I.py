@@ -149,8 +149,8 @@ class HigherOrderNamingGame():
 
 
 ## Reading bash input parameters
-group_size = sys.argv[1]
-p = sys.argv[2]
+group_size = int(sys.argv[1])
+p = float(sys.argv[2])
 
 N = 1000
 
@@ -170,7 +170,7 @@ for run_id in range(n_runs):
     for beta in betas:
         print(run_id, beta)
 
-        output_path = '../Results/Simulations/HONG_2words_HomMix_kHG/group_size_%s/%s/fixed_p%.2f_varbeta_run%i/'%(group_size, rule, p, run_id)
+        output_path = '../Results/Simulations/HONG_2words_HomMix_kHG/group_size_%i/%s/fixed_p%.2f_varbeta_run%i/'%(group_size, rule, p, run_id)
         if not os.path.exists(output_path):
             os.makedirs(output_path)
 
