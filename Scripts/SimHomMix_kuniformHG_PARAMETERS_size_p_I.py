@@ -152,12 +152,12 @@ class HigherOrderNamingGame():
 group_size = int(sys.argv[1])
 p = float(sys.argv[2])
 
-N = 1000
+N = 2000
 
 rule = 'intersection'
 
 #### Narrowing down the range of betas and increasing the number of points
-betas = np.linspace(0.2,0.8,40)
+betas = np.linspace(0,1,60)
 n_A = 0
 
 t_max = 1e6
