@@ -152,7 +152,7 @@ class HigherOrderNamingGame():
 group_size = int(sys.argv[1])
 p = float(sys.argv[2])
 
-N = 2000
+N = 1000
 
 rule = 'intersection'
 
