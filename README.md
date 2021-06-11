@@ -11,5 +11,6 @@ This repository contains the code required to reproduce the results presented in
 - **Email-EU** data set presented in [Paranjape et al. 2017](https://dl.acm.org/doi/10.1145/3018661.3018731) and downloaded from [here](https://github.com/arbenson/ScHoLP-Data).
 - **Congress-bills** data set presented in [Fowler 2017](https://www.sciencedirect.com/science/article/pii/S0378873305000730) and downloaded from [here](https://github.com/arbenson/ScHoLP-Data).
 
+Orinal and processed data are both stored in the `Data` folder.
 
  
