@@ -15,7 +15,7 @@ Orinal and processed data are both stored in the `Data` folder.
 
 # Code
 
-Most of the scripts are ipython notebooks contained in the `Notebooks` folder:
+Most of the scripts are Jupyter notebooks contained in the `Notebooks` folder:
 - `0_Integrating MF equations for 2-words HONG.ipynb` defines mean field equations and integrates them numerically
 - `1_Simulations - Homogeneous Mixing 2-HGs.ipynb` simulates the NG on homogeneous 2-hypergraphs for comparison with the analytics
 - `2_ Comparing MF with stochastic simulations.ipynb` compares the esults from the previous two notebooks (MF vs analytical)
