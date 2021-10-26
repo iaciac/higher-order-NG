@@ -1,7 +1,7 @@
-# Vanishing size of critical mass for tipping points in social convention
+# Group interactions modulate critical mass dynamics in social convention
 
 This repository contains the code required to reproduce the results presented in the following paper:
-- I. Iacopini, G. Petri, A. Baronchelli & A. Barrat (2021), *Vanishing size of critical mass for tipping points in social convention*, arXiv:2103.10411 [[link to preprint](https://arxiv.org/pdf/2103.10411.pdf)].
+- I. Iacopini, G. Petri, A. Baronchelli & A. Barrat (2021), *Group interactions modulate critical mass dynamics in social convention*, arXiv:2103.10411 [[link to preprint](https://arxiv.org/abs/2103.10411)].
 
 # Data
  
