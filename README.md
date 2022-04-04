@@ -1,7 +1,7 @@
 # Group interactions modulate critical mass dynamics in social convention
 
 This repository contains the code required to reproduce the results presented in the following paper:
-- I. Iacopini, G. Petri, A. Baronchelli & A. Barrat (2021), *Group interactions modulate critical mass dynamics in social convention*, arXiv:2103.10411 [[link to preprint](https://arxiv.org/abs/2103.10411)].
+- I. Iacopini, G. Petri, A. Baronchelli & A. Barrat (2021), [Group interactions modulate critical mass dynamics in social convention](https://doi.org/10.1038/s42005-022-00845-y), Commun Phys 5, 64 (2022).
 
 # Data
  
